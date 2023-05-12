@@ -1,0 +1,149 @@
+.action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+a.curacao-link,
+a.curacao-link:hover {
+    background-color: rgba(0, 0, 255, .4)
+}
+
+.curacao-link,
+.curacao-link:hover {
+    position: absolute
+}
+
+* {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+    padding: 0;
+    margin: 0
+}
+
+html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth
+}
+
+img {
+    border: 1px solid #ced4da;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.linky {
+    position: fixed;
+    z-index: 999999
+}
+
+.linky,
+.linky>a {
+    width: 200px
+}
+
+#linkyData {
+    left: .5rem
+}
+
+#linkyAdd,
+button#linkyDeleteAll,
+#linkyDelete,
+#linkyEnd,
+#linkyGo,
+#linkyLog {
+    right: 1rem
+}
+
+#linkyGo {
+    top: .5rem
+}
+
+#linkyAdd {
+    top: calc(93px + .5rem + .25rem + 2rem)
+}
+
+#linkyDelete {
+    top: calc(59px + 341px + .75rem + .5rem)
+}
+
+#linkyEnd {
+    top: calc(93px + 341px + .5rem + .75rem + 31px)
+}
+
+#linkyLog {
+    top: calc(24px + 341px + .25rem + 1.5rem + 31px + 31px)
+}
+
+#linkyData {
+    top: .25rem
+}
+
+.moveThis {
+    z-index: 9999999
+}
+
+.curacao-rel {
+    position: relative
+}
+
+.curacao-abs {
+    position: absolute
+}
+
+.curacao-link,
+.curacao-link.deletable,
+.curacao-link.deletable:hover,
+.curacao-link:hover {
+    border: 1px solid #000;
+    cursor: pointer;
+    font-size: 11px;
+    overflow: auto;
+    resize: both;
+    text-align: center
+}
+
+.curacao-link,
+.curacao-link:hover {
+    background: rgba(0, 255, 0, .6);
+    color: #000;
+    opacity: 1;
+    z-index: 999
+}
+
+.deletable>div {
+    display: none !important;
+}
+
+.curacao-link.deletable,
+.curacao-link.deletable:hover {
+    background: rgb(255, 0, 0, .6);
+    color: #fff;
+    opacity: 1;
+}
+
+.lh-0 {
+    line-height: 0
+}
+
+.linkyDrag {
+    line-height: 1.5 !important;
+    padding: .5rem !important;
+    text-align: center;
+}
+
+.linkyDrag>div {
+    display: flex;
+    justify-content: space-between
+}
+
+.linkyDrag>div div {
+    width: 100%
+}
+
+button#linkyDeleteAll {
+    top: calc(24px + 341px + .75rem + 1.5rem + 31px + 58px);
+}
