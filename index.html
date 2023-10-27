@@ -28,7 +28,7 @@
                         <label for="addFormLink">Product link</label>
                     </div>
                     <div class="form-floating mb-1">
-                        <input value="18" min="1" max="99" autocomplete="off" onkeyup="updateAddFormFn()" required type="number" class="form-control" id="addFormPgNum" placeholder="Product is on page">
+                        <input value="20" min="1" max="99" autocomplete="off" onkeyup="updateAddFormFn()" required type="number" class="form-control" id="addFormPgNum" placeholder="Product is on page">
                         <label for="addFormPgNum">Product is on page</label>
                     </div>
                     <button class="action btn btn-warning btn-sm fw-bolder text-uppercase w-100" type="submit">
@@ -45,7 +45,7 @@
                     <i class="fas fa-trash-alt"></i>
                 </div>
             </button>
-            <button id="linkyDeleteAll" class="action linky btn btn-danger btn-sm fw-bolder text-uppercase" onclick="deleteAllFn()">
+            <button style="visibility: hidden;" id="linkyDeleteAll" class="action linky btn btn-danger btn-sm fw-bolder text-uppercase" onclick="deleteAllFn()">
                 <span>Delete All Links</span>
                 <div>
                     <i class="fas fa-bomb"></i>
@@ -73,10 +73,10 @@
         <section id="catalog" class="mx-auto" style="max-width: 800px; width: 100%;">
             <div id="page_1" class="row lh-0 position-relative pg pageNumber1">
                 <div class="px-0 col position-relative">
-                    <img loading="lazy" alt="Page 1" class="h-auto w-100" src="https://icuracao.com/pub/media/assets/2023/10-OCT/toys/eng-page_18.jpg">
+                    <img loading="lazy" alt="Page 1" class="h-auto w-100" src="https://icuracao.com/pub/media/assets/2023/10-OCT/toys/eng-page_20.jpg">
                 </div>
             </div>
         </section>
-        <script src="./public/js/LINKY.js"></script>
+        <script src="./public/js/LINKYJS.js"></script>
     </body>
 </html>
