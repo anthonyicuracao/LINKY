@@ -1,5 +1,3 @@
-"use strict";
-
 var pageNumberInput = document.getElementById("pageNumberInput");
 var linkyJump = document.getElementById("linkyJump");
 
@@ -99,7 +97,7 @@ function letsGo() {
     catalogLinks.setAttribute("id", "catalog-links");
     var x = document.getElementsByClassName("moveThis");
     for (var i = 0; i < x.length; i++) {
-        var a = document.createElement("a");
+        let a = document.createElement("a");
         a.setAttribute("id", x[i].getAttribute("id"));
         a.setAttribute("href", x[i].getAttribute("href"));
         a.setAttribute("target", x[i].getAttribute("target"));
@@ -239,6 +237,57 @@ function deleteAllFn() {
             y[i].parentElement.removeChild(y[i]);
         }
     }
+    updatePageNumber();
 }
 
 setPageUrlFn();
+
+function updatePageNumber() {
+    // Get the input elements
+    var pageNumberInput = document.getElementById("pageNumberInput");
+    var addFormPgNum = document.getElementById("addFormPgNum");
+    // Get the value of the pageNumberInput
+    var inputUrl = pageNumberInput.value;
+    // Use a regular expression to find the page number in the string
+    var matches = inputUrl.match(/(\d+)\.jpg$/);
+    if (matches && matches.length > 1) {
+        // Extract the page number
+        var pageNumber = parseInt(matches[1]);
+        // Increment the page number
+        pageNumber += 1;
+        // Update the addFormPgNum input without leading zeros
+        addFormPgNum.value = pageNumber;
+        // Format the new page number with the same number of leading zeros
+        var pageWithLeadingZeros = matches[1];
+        var updatedPageNumberInput = inputUrl.replace(matches[1] + ".jpg", ("000000" + pageNumber).slice(-pageWithLeadingZeros.length) + ".jpg");
+        // Update the pageNumberInput with the new value
+        pageNumberInput.value = updatedPageNumberInput;
+        // Run updatePageUrlFn()
+        updatePageUrlFn();
+    }
+}
+
+function updatePageNumber2() {
+    // Get the input elements
+    var pageNumberInput = document.getElementById("pageNumberInput");
+    var addFormPgNum = document.getElementById("addFormPgNum");
+    // Get the value of the pageNumberInput
+    var inputUrl = pageNumberInput.value;
+    // Use a regular expression to find the page number in the string
+    var matches = inputUrl.match(/(\d+)\.jpg$/);
+    if (matches && matches.length > 1) {
+        // Extract the page number
+        var pageNumber = parseInt(matches[1]);
+        // Increment the page number
+        pageNumber = pageNumber - 1;
+        // Update the addFormPgNum input without leading zeros
+        addFormPgNum.value = pageNumber;
+        // Format the new page number with the same number of leading zeros
+        var pageWithLeadingZeros = matches[1];
+        var updatedPageNumberInput = inputUrl.replace(matches[1] + ".jpg", ("000000" + pageNumber).slice(-pageWithLeadingZeros.length) + ".jpg");
+        // Update the pageNumberInput with the new value
+        pageNumberInput.value = updatedPageNumberInput;
+        // Run updatePageUrlFn()
+        updatePageUrlFn();
+    }
+}

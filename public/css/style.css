@@ -54,8 +54,18 @@ button#linkyDeleteAll,
 #linkyDelete,
 #linkyEnd,
 #linkyGo,
+#linkyLog3,
 #linkyLog {
     right: 1rem
+}
+#linkyLog2  {
+    right: calc(100px + 1rem)
+}
+
+#linkyLog2,
+#linkyLog3  {
+   width: 100px;
+   justify-content: center !important;
 }
 
 #linkyGo {
@@ -76,6 +86,10 @@ button#linkyDeleteAll,
 
 #linkyLog {
     top: calc(24px + 341px + .25rem + 1.5rem + 31px + 31px)
+}
+#linkyLog3,
+#linkyLog2 {
+    top: calc(24px + -13px + .25rem + 1.5rem + 31px + 31px)
 }
 
 #linkyData {
