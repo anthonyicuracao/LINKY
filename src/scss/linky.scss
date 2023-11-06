@@ -121,3 +121,9 @@ img {
     margin-top: 5rem;
     margin-left: 1rem;
 }
+input:focus {
+    background-color: yellow !important;
+    border-color: yellow !important;
+    font-weight: bold !important;
+    color: black !important;
+}

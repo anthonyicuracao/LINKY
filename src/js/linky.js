@@ -404,4 +404,4 @@ document.getElementById("addFormLink").focus();
 
 }
 
-document.getElementById("addFormLink").focus();
+document.getElementById("pageNumberInput").focus();
