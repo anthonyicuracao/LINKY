@@ -1,11 +1,20 @@
+html, body {
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    * {
+        border-radius: 0 !important;
+    }
+}
 .action {
     display: flex;
     justify-content: space-between;
-    align-items: center
+    align-items: center;
 }
 a.curacao-link,
 a.curacao-link:hover {
-    background-color: rgba(0, 0, 255, .4)
+    background-color: rgba(0, 0, 255, .4);
 }
 
 .curacao-link,
@@ -13,21 +22,11 @@ a.curacao-link:hover {
     position: absolute
 }
 
-* {
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    outline: 0 !important;
-    padding: 0;
-    margin: 0
-}
 
-html {
-    -webkit-tap-highlight-color: transparent;
-    scroll-behavior: smooth
-}
+
+
 
 img {
-    border: 1px solid #ced4da;
     -moz-user-select: none;
     -webkit-user-drag: none;
     -webkit-user-select: none;
