@@ -241,6 +241,7 @@ function addLinkFn(event) {
     linkBeingAdded.innerHTML = '<div id="' + addFormSkuVal + '" href="' + addFormLinkVal + '" ' + 'target="_blank" class="moveThis curacao-link link_overlay position-abs page-number-' + addFormPgNumVal + '" style="top: 30px; left: 30px; height: 140px; width: 140px;">' + '<div id="' + addFormSkuVal + 'header" class="linkyDrag py-2 fw-bold">' + "<u>HERE</u> TO MOVE<hr class='mx-0 my-1' /><u>BOTTOM RIGHT</u><br/>TO RESIZE<br/>" + "<hr class='mx-0 my-1' /><a target='_blank' href='" + addFormLinkVal + "'>" + addFormLinkVal + "</a>" + "</div></div>";
     pageNumberToAddLinkCol.appendChild(linkBeingAdded);
     addFormLink.value = "";
+    document.getElementById("addFormLink").focus();
 }
 
 function setPageUrlFn() {
@@ -274,6 +275,8 @@ function updatePageUrlFn(event) {
         pageNumberInput.value = updatedPageNumberInput;
     }
     //
+
+    document.getElementById("addFormLink").focus();
 }
 
 function deleteAllFn() {
@@ -320,6 +323,7 @@ function updatePageNumber() {
         // Run updatePageUrlFn()
         updatePageUrlFn();
     }
+    document.getElementById("addFormLink").focus();
 }
 
 function updatePageNumber2() {
@@ -345,4 +349,7 @@ function updatePageNumber2() {
         // Run updatePageUrlFn()
         updatePageUrlFn();
     }
+    document.getElementById("addFormLink").focus();
 }
+
+document.getElementById("addFormLink").focus();

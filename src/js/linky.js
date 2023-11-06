@@ -288,6 +288,8 @@ function addLinkFn(event) {
         "<hr class='mx-0 my-1' /><a target='_blank' href='" + addFormLinkVal + "'>" + addFormLinkVal + "</a>" + "</div></div>";
     pageNumberToAddLinkCol.appendChild(linkBeingAdded);
     addFormLink.value = "";
+document.getElementById("addFormLink").focus();
+
 }
 
 function setPageUrlFn() {
@@ -321,6 +323,9 @@ function updatePageUrlFn(event) {
         pageNumberInput.value = updatedPageNumberInput;
     }
     //
+
+    document.getElementById("addFormLink").focus();
+
 }
 
 function deleteAllFn() {
@@ -368,6 +373,8 @@ function updatePageNumber() {
         // Run updatePageUrlFn()
         updatePageUrlFn();
     }
+document.getElementById("addFormLink").focus();
+
 }
 
 function updatePageNumber2() {
@@ -393,4 +400,8 @@ function updatePageNumber2() {
         // Run updatePageUrlFn()
         updatePageUrlFn();
     }
+document.getElementById("addFormLink").focus();
+
 }
+
+document.getElementById("addFormLink").focus();
