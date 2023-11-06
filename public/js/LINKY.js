@@ -80,6 +80,33 @@ function replaceTag(id) {
 }
 
 function letsGo() {
+
+    //
+    var inputUrl = document.getElementById("pageNumberInput").value;
+    var matches = inputUrl.match(/(\d+)\.jpg$/);
+    if (matches && matches.length > 1) {
+        var pageNumber = parseInt(matches[1]);
+        var pageWithLeadingZeros = matches[1];
+        var xasdfadfs = ("000000" + pageNumber).slice(-pageWithLeadingZeros.length);
+    }
+    //
+    var urlBtn = document.getElementById("url");
+    setTimeout(function () {
+        urlBtn.click();
+    }, 500);
+    setTimeout(function () {
+        urlBtn.click();
+    }, 1000);
+    setTimeout(function () {
+        urlBtn.click();
+    }, 1500);
+    setTimeout(function () {
+        urlBtn.click();
+    }, 2000);
+    setTimeout(function () {
+        urlBtn.click();
+    }, 2500);
+
     var allLinks = document.getElementsByClassName("moveThis");
     var w = document.getElementById("page_1").offsetWidth / 100;
     var h = document.getElementById("page_1").offsetHeight / 100;
@@ -113,7 +140,7 @@ function letsGo() {
     var yyyy = today.getFullYear();
 
     today = mm + "-" + dd + "-" + yyyy;
-    var y = "Catalog-Page-Links-" + today.toString() + "-" + new Date().getTime().toString() + ".html";
+    var y = "Page " + xasdfadfs + " links " + today.toString() + " v" + new Date().getTime().toString() + ".html";
     download(y, catalogLinks.innerHTML);
     if (catalogLinks) {
         if (catalogLinks.parentElement) {
@@ -171,15 +198,13 @@ function deleteModeFn() {
         for (var p = 0; p < curacaoLinkArr.length; p++) {
             curacaoLinkArr[p].classList.add("deletable");
         }
-        linkyDelete.classList = "action linky btn btn-danger btn-sm fw-bolder text-uppercase";
-        linkyDelete.innerHTML = "<span>Delete mode on</span><div><i class='fas fa-trash-alt'></i></div>";
+        linkyDelete.classList = "w-50 btn btn-danger btn-sm";
     } else {
         deleteMode = false;
         for (var pz = 0; pz < curacaoLinkArr.length; pz++) {
             curacaoLinkArr[pz].classList.remove("deletable");
         }
-        linkyDelete.classList = "action linky btn btn-secondary btn-sm fw-bolder text-uppercase";
-        linkyDelete.innerHTML = "<span>Delete mode off</span><div><i class='fas fa-trash-alt'></i></div>";
+        linkyDelete.classList = "w-50 btn btn-secondary btn-sm";
     }
 }
 
@@ -213,7 +238,7 @@ function addLinkFn(event) {
     var pageNumberToAddLink = document.getElementById("page_1");
     var pageNumberToAddLinkCol = pageNumberToAddLink.firstElementChild;
     var linkBeingAdded = document.createElement("div");
-    linkBeingAdded.innerHTML = '<div id="' + addFormSkuVal + '" href="' + addFormLinkVal + '" ' + 'target="_blank" class="moveThis curacao-link link_overlay curacao-abs page-number-' + addFormPgNumVal + '" style="top: 30px; left: 30px; height: 140px; width: 140px;">' + '<div id="' + addFormSkuVal + 'header" class="linkyDrag py-2 fw-bold">' + "<u>HERE</u> TO MOVE<hr class='mx-0 my-1' /><u>BOTTOM RIGHT</u><br/>TO RESIZE<br/>" + "<hr class='mx-0 my-1' /><a target='_blank' href='" + addFormLinkVal + "'>" + addFormLinkVal + "</a>" + "</div></div>";
+    linkBeingAdded.innerHTML = '<div id="' + addFormSkuVal + '" href="' + addFormLinkVal + '" ' + 'target="_blank" class="moveThis curacao-link link_overlay position-abs page-number-' + addFormPgNumVal + '" style="top: 30px; left: 30px; height: 140px; width: 140px;">' + '<div id="' + addFormSkuVal + 'header" class="linkyDrag py-2 fw-bold">' + "<u>HERE</u> TO MOVE<hr class='mx-0 my-1' /><u>BOTTOM RIGHT</u><br/>TO RESIZE<br/>" + "<hr class='mx-0 my-1' /><a target='_blank' href='" + addFormLinkVal + "'>" + addFormLinkVal + "</a>" + "</div></div>";
     pageNumberToAddLinkCol.appendChild(linkBeingAdded);
     addFormLink.value = "";
 }
@@ -224,10 +249,31 @@ function setPageUrlFn() {
     x.setAttribute("value", y.getAttribute("src"));
 }
 
-function updatePageUrlFn() {
+function updatePageUrlFn(event) {
+    event.preventDefault();
     var x = document.getElementById("pageNumberInput");
     var y = document.querySelectorAll("#page_1 img")[0];
     y.setAttribute("src", x.value);
+    // TEST
+    // Get the input elements
+    var pageNumberInput = document.getElementById("pageNumberInput");
+    var addFormPgNum = document.getElementById("addFormPgNum");
+    // Get the value of the pageNumberInput
+    var inputUrl = pageNumberInput.value;
+    // Use a regular expression to find the page number in the string
+    var matches = inputUrl.match(/(\d+)\.jpg$/);
+    if (matches && matches.length > 1) {
+        // Extract the page number
+        var pageNumber = parseInt(matches[1]);
+        // Update the addFormPgNum input without leading zeros
+        addFormPgNum.value = pageNumber;
+        // Format the new page number with the same number of leading zeros
+        var pageWithLeadingZeros = matches[1];
+        var updatedPageNumberInput = inputUrl.replace(matches[1] + ".jpg", ("000000" + pageNumber).slice(-pageWithLeadingZeros.length) + ".jpg");
+        // Update the pageNumberInput with the new value
+        pageNumberInput.value = updatedPageNumberInput;
+    }
+    //
 }
 
 function deleteAllFn() {

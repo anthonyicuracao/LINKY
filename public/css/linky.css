@@ -6,6 +6,11 @@ html, body {
 }
 html *, body * {
   border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.w-31 {
+  width: 31px !important;
 }
 
 .action {
@@ -42,68 +47,15 @@ img {
   width: 200px;
 }
 
-#linkyData {
-  left: 0.5rem;
-}
-
-#linkyAdd,
-button#linkyDeleteAll,
-#linkyDelete,
-#linkyEnd,
-#linkyGo,
-#linkyLog3,
-#linkyLog {
-  right: 1rem;
-}
-
-#linkyLog2 {
-  right: calc(100px + 1rem);
-}
-
-#linkyLog2,
-#linkyLog3 {
-  width: 100px;
-  justify-content: center !important;
-}
-
-#linkyGo {
-  top: 0.5rem;
-}
-
-#linkyAdd {
-  top: calc(93px + 0.5rem + 0.25rem + 2rem);
-}
-
-#linkyDelete {
-  top: calc(400px + 0.75rem + 0.5rem);
-}
-
-#linkyEnd {
-  top: calc(434px + 0.5rem + 0.75rem + 31px);
-}
-
-#linkyLog {
-  top: calc(365px + 0.25rem + 1.5rem + 31px + 31px);
-}
-
-#linkyLog3,
-#linkyLog2 {
-  top: calc(11px + 0.25rem + 1.5rem + 31px + 31px);
-}
-
-#linkyData {
-  top: 0.25rem;
-}
-
 .moveThis {
   z-index: 9999999;
 }
 
-.curacao-rel {
+.position-rel {
   position: relative;
 }
 
-.curacao-abs {
+.position-abs {
   position: absolute;
 }
 
@@ -157,6 +109,13 @@ button#linkyDeleteAll,
   width: 100%;
 }
 
-button#linkyDeleteAll {
-  top: calc(365px + 0.75rem + 1.5rem + 31px + 58px);
+.linkyMod {
+  position: fixed;
+  z-index: 9999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 150px;
+  margin-top: 5rem;
+  margin-left: 1rem;
 }/*# sourceMappingURL=linky.css.map */
