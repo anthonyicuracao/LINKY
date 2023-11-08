@@ -126,9 +126,9 @@ function letsGo() {
     var x = document.getElementsByClassName("moveThis");
     for (var i = 0; i < x.length; i++) {
         let a = document.createElement("a");
-        a.setAttribute("id", x[i].getAttribute("id"));
+        // a.setAttribute("id", x[i].getAttribute("id"));
         a.setAttribute("href", x[i].getAttribute("href"));
-        a.setAttribute("target", x[i].getAttribute("target"));
+        // a.setAttribute("target", x[i].getAttribute("target"));
         a.setAttribute("style", x[i].getAttribute("style"));
         a.classList = x[i].classList;
         a.classList.remove("done");
