@@ -174,7 +174,7 @@ function deleteModeFn(event) {
             curacaoLinkArr[pz].classList.remove("deletable");
         }
         linkyDelete.classList =
-            "btn btn-sm btn-outline-warning my-3 w-100";
+            "btn btn-sm btn-outline-warning my-2 w-100";
             linkyDelete.innerHTML = "Delete mode OFF";
 
     }
