@@ -277,6 +277,7 @@ function updatePageUrlFn(event) {
 }
 
 function deleteAllFn(event) {
+    event.preventDefault();
     var x = window.confirm("Are you sure you want to delete ALL links?");
     if (x) {
         var y = document.querySelectorAll(".px-0.col.position-relative > div");
@@ -288,11 +289,11 @@ function deleteAllFn(event) {
 }
 
 function deleteAllFnNoPrompt(event) {
+    event.preventDefault();
         var y = document.querySelectorAll(".px-0.col.position-relative > div");
         for (var i = 0; i < y.length; i++) {
             y[i].parentElement.removeChild(y[i]);
         }
-    updatePageNumber(event);
 }
 
 setPageUrlFn();
