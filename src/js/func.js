@@ -219,7 +219,7 @@ function pageNumberFn() {
 
 function linkyLog() {
     var bodyDiv = document.getElementsByTagName("html")[0];
-    console.log(bodyDiv);
+    // console.log(bodyDiv);
     alert("CHECK THE CONSOLE");
 }
 
@@ -328,7 +328,7 @@ function updatePageUrlFn(event) {
         matches = inputUrl.match(/(\d+)\.jpg$/);
         matchesType = ".jpg";
     }
-    console.log(matches);
+    // console.log(matches);
     if (matches && matches.length > 1) {
         // Extract the page number
         var pageNumber = parseInt(matches[1]);
