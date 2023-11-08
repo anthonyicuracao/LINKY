@@ -121,7 +121,48 @@ img {
 }
 
 input:focus {
-  background-color: yellow !important;
-  border-color: yellow !important;
+  background-color: lime !important;
+  border-color: lime !important;
   color: black !important;
+}
+
+#xlsx-upload-form,
+#xlsx-output-html {
+  font-size: small;
+  overflow: auto;
+  position: fixed;
+  right: 1rem;
+  width: 200px;
+  z-index: 999999999;
+}
+#xlsx-upload-form *,
+#xlsx-output-html * {
+  font-size: small;
+}
+
+#xlsx-output-html {
+  height: 500px;
+  top: calc(43px + 3rem);
+}
+#xlsx-output-html table {
+  background-color: white;
+  display: none;
+}
+#xlsx-output-html:hover {
+  width: 600px;
+}
+
+#xlsx-upload-form {
+  border: none;
+  height: auto;
+  margin: 0;
+  text-align: center;
+  top: 1rem;
+}
+#xlsx-upload-form #xlsx-clear-button {
+  width: 50%;
+}
+#xlsx-upload-form #xlsx-submit-button {
+  margin-left: 0;
+  width: 50%;
 }/*# sourceMappingURL=linky.css.map */

@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
         <link rel="stylesheet" href="./public/css/linky.min.css?">
@@ -11,6 +12,21 @@
         <title>LINKY</title>
     </head>
     <body class="bg-dark m-0 pb-3 pt-0 px-0">
+
+        <form id="xlsx-upload-form" onsubmit="submitXLSXForm(event)">
+            <input class="form-control form-control-sm" id="xlsx-file" type="file" accept=".xlsx"
+                onchange="enableXLSXSubmitButton()" required>
+            <div class="input-group">
+                 <button class="btn btn-secondary btn-sm" id="xlsx-clear-button" type="button"
+                    onclick="clearXLSXFileAndOutput()">
+                    Remove file
+                </button>
+                <button class="btn btn-secondary btn-sm" id="xlsx-submit-button" type="submit" disabled>View file</button>
+            </div>
+        </form>
+
+        <div id="xlsx-output-html"></div>
+
         <form id="updatePageUrlForm" onsubmit="updatePageUrlFn(event)" class="mx-auto py-3" style="max-width: 825px; width: 100%;">
             <div class="input-group m-0">
                 <input id="pageNumberInput" type="text" class="form-control form-control-sm" placeholder="https://icuracao.com/pub/media/assets/2023/11-NOV/bfcatalog/page_01.png" aria-label="URL" aria-describedby="url">
@@ -28,8 +44,7 @@
         <section class="linkyMod">
             <div id="linkyAdd"">
                 <form id="addForm" onsubmit="addLinkFn(event)">
-                
-                   <div class="input-group mb-2">
+                   <div class="input-group mb-0">
                     <input autocomplete="off" onkeyup="updateAddFormFn()" required type="text" class="form-control" id="addFormLink" placeholder="Product link">
                     <button class="btn btn-secondary btn-sm" type="submit">
                         <div>
@@ -37,9 +52,8 @@
                         </div>
                     </button>
                    </div>
-                   
                 </form>
-                <div class="form-floating mb-2">
+                <div class="form-floating mb-3">
                     <input disabled="" value="1" min="1" max="99" autocomplete="off" onkeyup="updateAddFormFn()" required type="number" class="form-control" id="addFormPgNum" placeholder="Page">
                     <label for="addFormPgNum">Page number</label>
                 </div>
@@ -47,7 +61,7 @@
                     <button id="linkyDelete" class="w-50 btn btn-secondary btn-sm" onclick="deleteModeFn()">
                         <i class="bi bi-trash"></i>
                 </button>
-                <button class="w-50 btn btn-success btn-sm" id="linkyLog" onclick="letsGo()">
+                <button class="w-50 btn btn-secondary btn-sm" id="linkyLog" onclick="letsGo()">
                         <i class="bi bi-save"></i>
                 </button>
                    </div>
@@ -62,5 +76,6 @@
             </div>
         </section>
         <script src="./public/js/func.js"></script>
+        <script src="./public/js/xlsx.js"></script>
     </body>
 </html>

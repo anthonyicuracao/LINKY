@@ -122,7 +122,8 @@ img {
     margin-left: 1rem;
 }
 input:focus {
-    background-color: yellow !important;
-    border-color: yellow !important;
+    background-color: lime !important;
+    border-color: lime !important;
     color: black !important;
 }
+@import "xlsx";
