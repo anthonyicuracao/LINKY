@@ -285,7 +285,6 @@ function deleteAllFn(event) {
             y[i].parentElement.removeChild(y[i]);
         }
     }
-    updatePageNumber(event);
 }
 
 function deleteAllFnNoPrompt(event) {
@@ -294,6 +293,7 @@ function deleteAllFnNoPrompt(event) {
         for (var i = 0; i < y.length; i++) {
             y[i].parentElement.removeChild(y[i]);
         }
+        updatePageNumber(event);
 }
 
 setPageUrlFn();
