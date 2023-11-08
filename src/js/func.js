@@ -368,7 +368,7 @@ function deleteAllFnNoPrompt() {
 setPageUrlFn();
 
 
-function updatePageNumber() {
+function updatePageNumber(event) {
     // Get the input elements
     var pageNumberInput = document.getElementById("pageNumberInput");
     var addFormPgNum = document.getElementById("addFormPgNum");
@@ -395,14 +395,14 @@ function updatePageNumber() {
         var updatedPageNumberInput = inputUrl.replace(matches[1] + matchesType, ("000000" + pageNumber).slice(-pageWithLeadingZeros.length) + matchesType);
         // Update the pageNumberInput with the new value
         pageNumberInput.value = updatedPageNumberInput;
-        // Run updatePageUrlFn()
-        updatePageUrlFn();
+        // Run updatePageUrlFn
+        updatePageUrlFn(event);
     }
 document.getElementById("addFormLink").focus();
 
 }
 
-function updatePageNumber2() {
+function updatePageNumber2(event) {
     // Get the input elements
     var pageNumberInput = document.getElementById("pageNumberInput");
     var addFormPgNum = document.getElementById("addFormPgNum");
@@ -429,8 +429,8 @@ function updatePageNumber2() {
         var updatedPageNumberInput = inputUrl.replace(matches[1] + matchesType, ("000000" + pageNumber).slice(-pageWithLeadingZeros.length) + matchesType);
         // Update the pageNumberInput with the new value
         pageNumberInput.value = updatedPageNumberInput;
-        // Run updatePageUrlFn()
-        updatePageUrlFn();
+        // Run updatePageUrlFn
+        updatePageUrlFn(event);
     }
 document.getElementById("addFormLink").focus();
 
