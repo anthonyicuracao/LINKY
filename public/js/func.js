@@ -157,7 +157,7 @@ function deleteModeFn(event) {
         for (var p = 0; p < curacaoLinkArr.length; p++) {
             curacaoLinkArr[p].classList.add("deletable");
         }
-        linkyDelete.classList = "btn btn-sm btn-danger my-3 w-100";
+        linkyDelete.classList = "btn btn-sm btn-danger my-2 w-100";
         linkyDelete.innerHTML = "Delete mode ON";
     } else {
         deleteMode = false;
