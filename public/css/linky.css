@@ -9,6 +9,29 @@ html *, body * {
   box-shadow: none !important;
 }
 
+.xlsx-input-group,
+.extra-links,
+.extra-links-2 {
+  display: flex;
+}
+
+.extra-links button {
+  width: 33.33%;
+}
+
+.extra-links-2 button {
+  width: 50%;
+}
+
+.mi {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.mi span {
+  font-size: 16px;
+}
+
 .w-31 {
   width: 31px !important;
 }
@@ -166,10 +189,12 @@ input:focus {
   text-align: center;
   top: 1rem;
 }
-#xlsx-upload-form #xlsx-clear-button {
+
+.w-x-50,
+#xlsx-clear-button {
   width: 50%;
 }
-#xlsx-upload-form #xlsx-submit-button {
-  margin-left: 0;
-  width: 50%;
+
+.w-x-100 {
+  width: 100%;
 }/*# sourceMappingURL=linky.css.map */

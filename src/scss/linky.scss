@@ -8,6 +8,31 @@ html, body {
         box-shadow: none !important;
     }
 }
+
+.xlsx-input-group,
+.extra-links,
+.extra-links-2 {
+    display: flex;
+
+}
+.extra-links {
+    button {
+        width: 33.33%;
+    }
+}
+.extra-links-2 {
+    button {
+        width: 50%;
+    }
+}
+.mi {
+    span {
+        font-size: 16px;
+    }
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
 .w-31 {
     width: 31px !important;
 }

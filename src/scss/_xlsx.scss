@@ -38,11 +38,11 @@
   margin: 0;
   text-align: center;
   top: 1rem;
-  #xlsx-clear-button {
-    width: calc(50%);
-  }
-  #xlsx-submit-button {
-    margin-left: 0;
-    width: calc(50%);
-  }
+}
+.w-x-50,
+#xlsx-clear-button {
+  width: 50%;
+}
+.w-x-100 {
+  width: 100%;
 }

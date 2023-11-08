@@ -158,14 +158,14 @@ function deleteModeFn(event) {
             curacaoLinkArr[p].classList.add("deletable");
         }
         linkyDelete.classList = "btn btn-sm btn-danger my-3 w-100";
-        linkyDelete.innerHTML = "Delete mode on";
+        linkyDelete.innerHTML = "Delete mode ON";
     } else {
         deleteMode = false;
         for (var pz = 0; pz < curacaoLinkArr.length; pz++) {
             curacaoLinkArr[pz].classList.remove("deletable");
         }
         linkyDelete.classList = "btn btn-sm btn-outline-warning my-3 w-100";
-        linkyDelete.innerHTML = "Delete mode off";
+        linkyDelete.innerHTML = "Delete mode OFF";
     }
 }
 

@@ -167,7 +167,7 @@ function deleteModeFn(event) {
         }
         linkyDelete.classList =
             "btn btn-sm btn-danger my-3 w-100";
-            linkyDelete.innerHTML = "Delete mode on";
+            linkyDelete.innerHTML = "Delete mode ON";
     } else {
         deleteMode = false;
         for (var pz = 0; pz < curacaoLinkArr.length; pz++) {
@@ -175,7 +175,7 @@ function deleteModeFn(event) {
         }
         linkyDelete.classList =
             "btn btn-sm btn-outline-warning my-3 w-100";
-            linkyDelete.innerHTML = "Delete mode off";
+            linkyDelete.innerHTML = "Delete mode OFF";
 
     }
 }

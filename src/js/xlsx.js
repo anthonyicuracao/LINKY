@@ -1,4 +1,6 @@
 var xlsxForm = document.getElementById("xlsx-upload-form");
+
+
 // XLSX: Table row on-click event
 function addXLSXLinkFn(event) {
 var gggg, hhhh;
@@ -38,24 +40,9 @@ if (/^[a-zA-Z]/.test(gggg)) {
         "<hr class='mx-0 my-1' /><a target='_blank' href='" + addFormLinkVal + "'>" + addFormLinkVal + "</a>" + "</div></div>";
     pageNumberToAddLinkCol.appendChild(linkBeingAdded);
     addFormLink.value = "";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
 // XLSX: Add on-click event to table rows
 function attachXLSXLinkFn(event) {
   var trs = document.querySelectorAll("#xlsx-output-html tr");
@@ -81,11 +68,11 @@ function enableXLSXSubmitButton() {
   if (fileInput.files.length > 0) {
     submitButton.removeAttribute("disabled");
     xlsxClearButton.removeAttribute("style");
-    xlsxSubmitButton.classList = "btn btn-primary btn-sm";
+    xlsxSubmitButton.classList = "btn btn-primary btn-sm w-x-50";
   } else {
     submitButton.setAttribute("disabled", "disabled");
     xlsxClearButton.setAttribute("style", "display: none;");
-    xlsxSubmitButton.classList = "btn btn-primary btn-sm w-100";
+    xlsxSubmitButton.classList = "btn btn-primary btn-sm w-x-100";
   }
 
 }
@@ -110,11 +97,11 @@ function clearXLSXFileAndOutput() {
   if (fileInput.files.length > 0) {
     submitButton.removeAttribute("disabled");
     xlsxClearButton.removeAttribute("style");
-    xlsxSubmitButton.classList = "btn btn-primary btn-sm";
+    xlsxSubmitButton.classList = "btn btn-primary btn-sm w-x-50";
   } else {
     submitButton.setAttribute("disabled", "disabled");
     xlsxClearButton.setAttribute("style", "display: none;");
-    xlsxSubmitButton.classList = "btn btn-primary btn-sm w-100";
+    xlsxSubmitButton.classList = "btn btn-primary btn-sm w-x-100";
   }
 
 
@@ -159,3 +146,47 @@ function submitXLSXForm(event) {
     attachXLSXLinkFn(event);
   }, 500);
 }
+
+
+
+
+
+
+
+
+
+
+function addCuracaoLink(event, jjjj) {
+  event.preventDefault();
+    var x = Math.floor(100000000 + Math.random() * 900000000);
+      var addFormSku, addFormSkuVal;
+      addFormSku = x;
+      addFormSkuVal = x;
+      var addFormPgNum = document.getElementById("addFormPgNum");
+      var addFormLink = jjjj.trim();
+      var addFormPgNumVal = addFormPgNum.value
+          .toString()
+          .trim()
+          .replace(/[^a-zA-Z0-9]/g, "");
+      var addFormLinkVal = addFormLink.trim();
+      var pageNumberToAddLink = document.getElementById("page_1");
+      var pageNumberToAddLinkCol = pageNumberToAddLink.firstElementChild;
+      var linkBeingAdded = document.createElement("div");
+      linkBeingAdded.innerHTML =
+          '<div id="' +
+          addFormSkuVal +
+          '" href="' +
+          addFormLinkVal +
+          '" ' +
+          'target="_blank" class="moveThis curacao-link link_overlay position-abs page-number-' +
+          addFormPgNumVal +
+          '" style="top: 30px; left: 30px; height: 140px; width: 140px;">' +
+          '<div id="' +
+          addFormSkuVal +
+          'header" class="linkyDrag py-2 fw-bold">' +
+          "<u>HERE</u> TO MOVE<hr class='mx-0 my-1' /><u>BOTTOM RIGHT</u><br/>TO RESIZE<br/>" +
+          "<hr class='mx-0 my-1' /><a target='_blank' href='" + addFormLinkVal + "'>" + addFormLinkVal + "</a>" + "</div></div>";
+      pageNumberToAddLinkCol.appendChild(linkBeingAdded);
+      addFormLink.value = "";
+  }
+  
