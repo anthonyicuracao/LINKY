@@ -70,19 +70,7 @@ function dragElement(elmnt) {
     }
 }
 
-function replaceTag(id) {
-    var that = document.getElementById(id);
-
-    var p = document.createElement("a");
-    p.setAttribute("id", that.getAttribute("id"));
-
-    while (that.firstChild) {
-        p.appendChild(that.firstChild);
-    }
-    that.parentNode.replaceChild(p, that);
-}
-
-function letsGo() {
+function letsGo(event) {
 
   //
     var inputUrl = document.getElementById("pageNumberInput").value;
@@ -160,74 +148,18 @@ function letsGo() {
         catalogLinks.parentElement.removeChild(catalogLinks);
       }
     }
-    deleteAllFnNoPrompt();
+    deleteAllFnNoPrompt(event);
 
   
-}
-
-function finishFn() {
-    var allLinks = document.getElementsByClassName("moveThis");
-    var w = document.getElementById("page_1").offsetWidth / 100;
-    var h = document.getElementById("page_1").offsetHeight / 100;
-    for (var d = 0; d < allLinks.length; d++) {
-        if (!allLinks[d].classList.contains("done")) {
-            allLinks[d].style.height =
-                (parseInt(allLinks[d].style.height.replace("px", "")) / h).toString() +
-                "%";
-            allLinks[d].style.top =
-                (parseInt(allLinks[d].style.top.replace("px", "")) / h).toString() +
-                "%";
-            allLinks[d].style.width =
-                (parseInt(allLinks[d].style.width.replace("px", "")) / w).toString() +
-                "%";
-            allLinks[d].style.left =
-                (parseInt(allLinks[d].style.left.replace("px", "")) / w).toString() +
-                "%";
-            allLinks[d].classList.add("done");
-        }
-    }
-
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, "0");
-    var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
-    var yyyy = today.getFullYear();
-
-    today = mm + "-" + dd + "-" + yyyy;
-    var x =
-        "index-" +
-        today.toString() +
-        "-" +
-        new Date().getTime().toString() +
-        ".html";
-
-    download(
-        x,
-        '<!DOCTYPE html><html id="download" lang="en">' +
-        document.getElementById("download").innerHTML +
-        "</html>"
-    );
-}
-
-function pageNumberFn() {
-    pageNumberInput.setAttribute("value", pageNumberInput.value);
-    pageNumberComplete = "#page_" + pageNumberInput.value.toString();
-    linkyJump.setAttribute("href", pageNumberComplete);
-    document
-        .getElementById("addFormPgNum")
-        .setAttribute("value", pageNumberInput.value.toString());
-}
-
-function linkyLog() {
-    var bodyDiv = document.getElementsByTagName("html")[0];
-    // console.log(bodyDiv);
-    alert("CHECK THE CONSOLE");
 }
 
 var deleteMode = false;
 var curacaoLinkArr = document.getElementsByClassName("curacao-link");
 var linkyDelete = document.getElementById("linkyDelete");
+var bodyTag = document.getElementsByTagName("body")[0];
 
-function deleteModeFn() {
+function deleteModeFn(event) {
+    event.preventDefault();
     if (deleteMode === false) {
         deleteMode = true;
         for (var p = 0; p < curacaoLinkArr.length; p++) {
@@ -247,8 +179,6 @@ function deleteModeFn() {
 
     }
 }
-
-var bodyTag = document.getElementsByTagName("body")[0];
 
 bodyTag.addEventListener("click", function (e) {
     var tgt = e.target;
@@ -346,7 +276,7 @@ function updatePageUrlFn(event) {
 
 }
 
-function deleteAllFn() {
+function deleteAllFn(event) {
     var x = window.confirm("Are you sure you want to delete ALL links?");
     if (x) {
         var y = document.querySelectorAll(".px-0.col.position-relative > div");
@@ -354,15 +284,15 @@ function deleteAllFn() {
             y[i].parentElement.removeChild(y[i]);
         }
     }
-    updatePageNumber();
+    updatePageNumber(event);
 }
 
-function deleteAllFnNoPrompt() {
+function deleteAllFnNoPrompt(event) {
         var y = document.querySelectorAll(".px-0.col.position-relative > div");
         for (var i = 0; i < y.length; i++) {
             y[i].parentElement.removeChild(y[i]);
         }
-    updatePageNumber();
+    updatePageNumber(event);
 }
 
 setPageUrlFn();
