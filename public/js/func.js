@@ -83,7 +83,14 @@ function letsGo() {
 
     //
     var inputUrl = document.getElementById("pageNumberInput").value;
-    var matches = inputUrl.match(/(\d+)\.jpg$/);
+    var matches, matchesType;
+    if (inputUrl && inputUrl.indexOf(".png") !== -1) {
+        matches = inputUrl.match(/(\d+)\.png$/);
+        matchesType = ".png";
+    } else {
+        matches = inputUrl.match(/(\d+)\.jpg$/);
+        matchesType = ".jpg";
+    }
     if (matches && matches.length > 1) {
         var pageNumber = parseInt(matches[1]);
         var pageWithLeadingZeros = matches[1];
@@ -262,7 +269,15 @@ function updatePageUrlFn(event) {
     // Get the value of the pageNumberInput
     var inputUrl = pageNumberInput.value;
     // Use a regular expression to find the page number in the string
-    var matches = inputUrl.match(/(\d+)\.jpg$/);
+    var matches, matchesType;
+    if (inputUrl && inputUrl.indexOf(".png") !== -1) {
+        matches = inputUrl.match(/(\d+)\.png$/);
+        matchesType = ".png";
+    } else {
+        matches = inputUrl.match(/(\d+)\.jpg$/);
+        matchesType = ".jpg";
+    }
+    console.log(matches);
     if (matches && matches.length > 1) {
         // Extract the page number
         var pageNumber = parseInt(matches[1]);
@@ -270,7 +285,7 @@ function updatePageUrlFn(event) {
         addFormPgNum.value = pageNumber;
         // Format the new page number with the same number of leading zeros
         var pageWithLeadingZeros = matches[1];
-        var updatedPageNumberInput = inputUrl.replace(matches[1] + ".jpg", ("000000" + pageNumber).slice(-pageWithLeadingZeros.length) + ".jpg");
+        var updatedPageNumberInput = inputUrl.replace(matches[1] + matchesType, ("000000" + pageNumber).slice(-pageWithLeadingZeros.length) + matchesType);
         // Update the pageNumberInput with the new value
         pageNumberInput.value = updatedPageNumberInput;
     }
@@ -307,7 +322,14 @@ function updatePageNumber() {
     // Get the value of the pageNumberInput
     var inputUrl = pageNumberInput.value;
     // Use a regular expression to find the page number in the string
-    var matches = inputUrl.match(/(\d+)\.jpg$/);
+    var matches, matchesType;
+    if (inputUrl && inputUrl.indexOf(".png") !== -1) {
+        matches = inputUrl.match(/(\d+)\.png$/);
+        matchesType = ".png";
+    } else {
+        matches = inputUrl.match(/(\d+)\.jpg$/);
+        matchesType = ".jpg";
+    }
     if (matches && matches.length > 1) {
         // Extract the page number
         var pageNumber = parseInt(matches[1]);
@@ -317,7 +339,7 @@ function updatePageNumber() {
         addFormPgNum.value = pageNumber;
         // Format the new page number with the same number of leading zeros
         var pageWithLeadingZeros = matches[1];
-        var updatedPageNumberInput = inputUrl.replace(matches[1] + ".jpg", ("000000" + pageNumber).slice(-pageWithLeadingZeros.length) + ".jpg");
+        var updatedPageNumberInput = inputUrl.replace(matches[1] + matchesType, ("000000" + pageNumber).slice(-pageWithLeadingZeros.length) + matchesType);
         // Update the pageNumberInput with the new value
         pageNumberInput.value = updatedPageNumberInput;
         // Run updatePageUrlFn()
@@ -333,7 +355,14 @@ function updatePageNumber2() {
     // Get the value of the pageNumberInput
     var inputUrl = pageNumberInput.value;
     // Use a regular expression to find the page number in the string
-    var matches = inputUrl.match(/(\d+)\.jpg$/);
+    var matches, matchesType;
+    if (inputUrl && inputUrl.indexOf(".png") !== -1) {
+        matches = inputUrl.match(/(\d+)\.png$/);
+        matchesType = ".png";
+    } else {
+        matches = inputUrl.match(/(\d+)\.jpg$/);
+        matchesType = ".jpg";
+    }
     if (matches && matches.length > 1) {
         // Extract the page number
         var pageNumber = parseInt(matches[1]);
@@ -343,7 +372,7 @@ function updatePageNumber2() {
         addFormPgNum.value = pageNumber;
         // Format the new page number with the same number of leading zeros
         var pageWithLeadingZeros = matches[1];
-        var updatedPageNumberInput = inputUrl.replace(matches[1] + ".jpg", ("000000" + pageNumber).slice(-pageWithLeadingZeros.length) + ".jpg");
+        var updatedPageNumberInput = inputUrl.replace(matches[1] + matchesType, ("000000" + pageNumber).slice(-pageWithLeadingZeros.length) + matchesType);
         // Update the pageNumberInput with the new value
         pageNumberInput.value = updatedPageNumberInput;
         // Run updatePageUrlFn()
