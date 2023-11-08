@@ -1,17 +1,19 @@
 var xlsxForm = document.getElementById("xlsx-upload-form");
 // XLSX: Table row on-click event
 function addXLSXLinkFn(event) {
-//   console.log(event.target);
-
-var xslxEventTargetHTML = event.target.innerHTML;
-// console.log(xslxEventTargetHTML);
-
+var gggg, hhhh;
+gggg = event.target.innerHTML.toString();
+if (/^[a-zA-Z]/.test(gggg)) {
+  hhhh = "https://icuracao.com/searchanise/result?q=" + gggg.replace(/[^a-zA-Z0-9 ]/g, '').trim().replace(/\s+/g, '+').toLowerCase();
+} else {
+  hhhh = "https://icuracao.com/catalog/product/view/id/" + gggg.replace(/[^0-9]/g, '').replace(/\s+/g, '');
+}
   var x = Math.floor(100000000 + Math.random() * 900000000);
     var addFormSku, addFormSkuVal;
     addFormSku = x;
     addFormSkuVal = x;
     var addFormPgNum = document.getElementById("addFormPgNum");
-    var addFormLink = xslxEventTargetHTML;
+    var addFormLink = hhhh;
     var addFormPgNumVal = addFormPgNum.value
         .toString()
         .trim()
@@ -73,11 +75,17 @@ function attachXLSXLinkFn(event) {
 function enableXLSXSubmitButton() {
   const fileInput = document.getElementById("xlsx-file");
   const submitButton = document.getElementById("xlsx-submit-button");
-
+  const xlsxClearButton = document.getElementById("xlsx-clear-button");
+  const xlsxSubmitButton = document.getElementById("xlsx-submit-button");
+  
   if (fileInput.files.length > 0) {
     submitButton.removeAttribute("disabled");
+    xlsxClearButton.removeAttribute("style");
+    xlsxSubmitButton.classList = "btn btn-primary btn-sm";
   } else {
     submitButton.setAttribute("disabled", "disabled");
+    xlsxClearButton.setAttribute("style", "display: none;");
+    xlsxSubmitButton.classList = "btn btn-primary btn-sm w-100";
   }
 
 }
@@ -94,6 +102,23 @@ function clearXLSXFileAndOutput() {
   // Disable the submit button
   const submitButton = document.getElementById("xlsx-submit-button");
   submitButton.setAttribute("disabled", "disabled");
+
+
+
+  const xlsxClearButton = document.getElementById("xlsx-clear-button");
+  const xlsxSubmitButton = document.getElementById("xlsx-submit-button");
+  if (fileInput.files.length > 0) {
+    submitButton.removeAttribute("disabled");
+    xlsxClearButton.removeAttribute("style");
+    xlsxSubmitButton.classList = "btn btn-primary btn-sm";
+  } else {
+    submitButton.setAttribute("disabled", "disabled");
+    xlsxClearButton.setAttribute("style", "display: none;");
+    xlsxSubmitButton.classList = "btn btn-primary btn-sm w-100";
+  }
+
+
+
 }
 // XLSX: Submit the form
 function submitXLSXForm(event) {

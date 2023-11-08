@@ -205,13 +205,15 @@ function deleteModeFn() {
         for (var p = 0; p < curacaoLinkArr.length; p++) {
             curacaoLinkArr[p].classList.add("deletable");
         }
-        linkyDelete.classList = "w-50 btn btn-danger btn-sm";
+        linkyDelete.classList = "btn btn-sm btn-danger my-3 w-100";
+        linkyDelete.innerHTML = "Delete mode on";
     } else {
         deleteMode = false;
         for (var pz = 0; pz < curacaoLinkArr.length; pz++) {
             curacaoLinkArr[pz].classList.remove("deletable");
         }
-        linkyDelete.classList = "w-50 btn btn-secondary btn-sm";
+        linkyDelete.classList = "btn btn-sm btn-outline-warning my-3 w-100";
+        linkyDelete.innerHTML = "Delete mode off";
     }
 }
 

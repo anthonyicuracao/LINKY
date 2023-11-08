@@ -16,9 +16,20 @@
   table {
     background-color: white;
     display: none;
+    transition: width ease-in-out .3s;
   }
   &:hover {
     width: 600px;
+    transition: width ease-in-out .3s;
+  }
+  table {
+    td {
+      &:hover {
+        background-color: yellow;
+        color: black;
+        cursor: pointer;
+      }
+    }
   }
 }
 #xlsx-upload-form {

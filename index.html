@@ -17,11 +17,11 @@
             <input class="form-control form-control-sm" id="xlsx-file" type="file" accept=".xlsx"
                 onchange="enableXLSXSubmitButton()" required>
             <div class="input-group">
-                 <button class="btn btn-secondary btn-sm" id="xlsx-clear-button" type="button"
+                 <button style="display: none;" class="btn btn-outline-warning btn-sm" id="xlsx-clear-button" type="button"
                     onclick="clearXLSXFileAndOutput()">
                     Remove file
                 </button>
-                <button class="btn btn-secondary btn-sm" id="xlsx-submit-button" type="submit" disabled>View file</button>
+                <button class="btn btn-primary btn-sm w-100" id="xlsx-submit-button" type="submit" disabled>View file</button>
             </div>
         </form>
 
@@ -43,30 +43,30 @@
         </form>
         <section class="linkyMod">
             <div id="linkyAdd"">
-                <form id="addForm" onsubmit="addLinkFn(event)">
-                   <div class="input-group mb-0">
-                    <input autocomplete="off" onkeyup="updateAddFormFn()" required type="text" class="form-control" id="addFormLink" placeholder="Product link">
-                    <button class="btn btn-secondary btn-sm" type="submit">
-                        <div>
-                            <i class="bi bi-plus"></i>
-                        </div>
-                    </button>
-                   </div>
-                </form>
+                        <form id=" addForm" onsubmit="addLinkFn(event)">
                 <div class="form-floating mb-3">
-                    <input disabled="" value="1" min="1" max="99" autocomplete="off" onkeyup="updateAddFormFn()" required type="number" class="form-control" id="addFormPgNum" placeholder="Page">
+                    <input disabled="" value="1" min="1" max="99" autocomplete="off" onkeyup="updateAddFormFn()" required
+                        type="number" class="form-control" id="addFormPgNum" placeholder="Page">
                     <label for="addFormPgNum">Page number</label>
                 </div>
-                <div class="input-group mb-0 linkyDeleteSave">
-                    <button id="linkyDelete" class="w-50 btn btn-secondary btn-sm" onclick="deleteModeFn()">
-                        <i class="bi bi-trash"></i>
+                <input autocomplete="off" onkeyup="updateAddFormFn()" required type="text" class="form-control" id="addFormLink"
+                    placeholder="Product link">
+                <button class="btn btn-primary btn-sm w-100" type="submit">
+                    Add link
                 </button>
-                <button class="w-50 btn btn-secondary btn-sm" id="linkyLog" onclick="letsGo()">
-                        <i class="bi bi-save"></i>
+                </form>
+                <div class="input-group mb-0 mt-3 linkyDeleteSave">
+                    <button class="w-100 btn btn-success btn-sm" id="linkyLog" onclick="letsGo()">
+                        Save links
+                    </button>
+                </div>
+                <button id="linkyDelete" class="btn btn-sm btn-outline-warning my-3 w-100" onclick="deleteModeFn()">
+                    Delete mode off
                 </button>
-                   </div>
+                <button id="linkyDeleteAll" class="w-100 btn btn-outline-danger btn-sm" onclick="deleteAllFn()">
+                    Delete all links
+                </button>
             </div>
-          
         </section>
         <section id="catalog" class="mx-auto" style="max-width: 800px; width: 100%;">
             <div id="page_1" class="row lh-0 position-relative pg pageNumber1">

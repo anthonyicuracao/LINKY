@@ -121,8 +121,8 @@ img {
 }
 
 input:focus {
-  background-color: lime !important;
-  border-color: lime !important;
+  background-color: yellow !important;
+  border-color: yellow !important;
   color: black !important;
 }
 
@@ -147,9 +147,16 @@ input:focus {
 #xlsx-output-html table {
   background-color: white;
   display: none;
+  transition: width ease-in-out 0.3s;
 }
 #xlsx-output-html:hover {
   width: 600px;
+  transition: width ease-in-out 0.3s;
+}
+#xlsx-output-html table td:hover {
+  background-color: yellow;
+  color: black;
+  cursor: pointer;
 }
 
 #xlsx-upload-form {
