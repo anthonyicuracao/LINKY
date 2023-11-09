@@ -197,7 +197,7 @@ function addLinkFn(event) {
     var pageNumberToAddLink = document.getElementById("page_1");
     var pageNumberToAddLinkCol = pageNumberToAddLink.firstElementChild;
     var linkBeingAdded = document.createElement("div");
-    linkBeingAdded.innerHTML = '<div id="' + addFormSkuVal + '" href="' + addFormLinkVal + '" ' + 'target="_blank" class="moveThis curacao-link link_overlay position-abs page-number-' + addFormPgNumVal + '" style="top: 30px; left: 30px; height: 300px; width: 300px;">' + '<div id="' + addFormSkuVal + 'header" class="linkyDrag py-2 fw-bold">' + "<u>HERE</u> TO MOVE<hr class='mx-0 my-1' /><u>BOTTOM RIGHT</u><br/>TO RESIZE<br/>" + "<hr class='mx-0 my-1' /><a target='_blank' href='" + addFormLinkVal + "'>" + addFormLinkVal + "</a>" + "</div></div>";
+    linkBeingAdded.innerHTML = '<div id="' + addFormSkuVal + '" href="' + addFormLinkVal + '" ' + 'target="_blank" class="moveThis curacao-link link_overlay position-abs page-number-' + addFormPgNumVal + '" style="top: 30px; left: 30px; height: 200px; width: 200px;">' + '<div id="' + addFormSkuVal + 'header" class="linkyDrag py-2 fw-bold">' + "<u>HERE</u> TO MOVE<hr class='mx-0 my-1' /><u>BOTTOM RIGHT</u><br/>TO RESIZE<br/>" + "<hr class='mx-0 my-1' /><a target='_blank' href='" + addFormLinkVal + "'>" + addFormLinkVal + "</a>" + "</div></div>";
     pageNumberToAddLinkCol.appendChild(linkBeingAdded);
     addFormLink.value = "";
     document.getElementById("addFormLink").focus();

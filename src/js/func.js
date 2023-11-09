@@ -220,7 +220,7 @@ function addLinkFn(event) {
         '" ' +
         'target="_blank" class="moveThis curacao-link link_overlay position-abs page-number-' +
         addFormPgNumVal +
-        '" style="top: 30px; left: 30px; height: 300px; width: 300px;">' +
+        '" style="top: 30px; left: 30px; height: 200px; width: 200px;">' +
         '<div id="' +
         addFormSkuVal +
         'header" class="linkyDrag py-2 fw-bold">' +
