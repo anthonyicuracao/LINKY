@@ -149,6 +149,13 @@ input:focus {
   color: black !important;
 }
 
+#btn-xlsx {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(calc(100% + 0.5rem));
+  width: 100%;
+}
+
 #xlsx-upload-form,
 #xlsx-output-html {
   font-size: small;

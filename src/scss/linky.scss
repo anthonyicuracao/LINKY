@@ -151,4 +151,11 @@ input:focus {
     border-color: yellow !important;
     color: black !important;
 }
+#btn-xlsx {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(calc(100% + .5rem));
+    width: 100%;
+}
+
 @import "xlsx";
